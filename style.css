@@ -1,0 +1,1184 @@
+/**
+ * The CSS file of Pranzobrenso site 
+ *
+ * Index:
+ * 01 Common style
+ * 02 Desktop Style
+ * 03 Tablet Style
+ * 04 Mobile Style
+ * Responsive: Manage typography, grid, border and spacing
+ * No external librares
+ *
+ * From line 1146 - supplement CSS for Report.html (for presentation purposes)
+ */
+
+/* ==========================================================================
+   COMMON STYLES
+   ========================================================================== */
+
+body {
+  background-color: white;
+  min-width: 500px;
+  min-height: 100%;
+}
+
+/* TYPOGRAPHY
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+q,
+input,
+label,
+.link a,
+.spotlight-label p,
+.nav-links a,
+#imgtext {
+  font-family: "Bayon", san-serif;
+}
+
+p,
+a,
+li,
+textarea {
+  font-family: "Helvetica", sans-serif;
+}
+
+.border-wrapper {
+  border-left: 5px solid #131313;
+  border-right: 5px solid #131313;
+  padding: 40px;
+  min-height: 60vh;
+}
+
+a {
+  text-decoration: none;
+  color: #131313;
+}
+
+.right {
+  float: right;
+}
+
+.link {
+  text-align: left;
+}
+
+.restaurants a {
+  color: #c88784;
+}
+
+a:hover {
+  color: #359e85;
+  transition: 0.3s;
+}
+
+/* BACKGROUND COLOR
+   ========================================================================== */
+/*---- Opening now section */
+#opening-now {
+  background-color: #dfbf79;
+}
+
+.opening-now-list li {
+  padding: 0 0 16px 24px;
+}
+
+#quote {
+  background-color: #6cd2ba;
+}
+
+em {
+  line-height: 2em;
+}
+
+/* Header section*/
+header {
+  box-sizing: border-box;
+  height: 110px;
+  border: 5px solid #131313;
+}
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pranzobrenso-logo {
+  height: 105px;
+  border-right: 5px solid #131313;
+}
+
+#nav {
+  height: 105px;
+  border-left: 5px solid #131313;
+  padding: 0 32px;
+}
+
+nav {
+  /* background: #333; */
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ccc;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger div {
+  width: 32px;
+  height: 5px;
+  background: #131313;
+  margin: 4px;
+  transition: all 0.5s ease;
+}
+
+.responsive {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.nav-links {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  background: #6cd2ba;
+  border: 5px solid #131313;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0;
+  padding: 40px 0 40px 0;
+  transform: translateX(100%);
+}
+
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  font-size: 2em;
+  color: #131313;
+}
+
+.nav-active {
+  display: flex;
+  transform: translateX(0);
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-12px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-12px, -6px);
+}
+
+.page-title {
+  padding-bottom: 24px;
+}
+
+.page-title p {
+  font-style: oblique;
+  font-size: 1.1em;
+  padding: 12px 0;
+  letter-spacing: 0.1rem;
+  color: #131313;
+}
+
+#carousel > h1 {
+  padding: 24px 0 0 24px;
+}
+
+/* FOOTER
+   ========================================================================== */
+.grid-container-footer {
+  background-color: #131313;
+}
+
+.grid-container-footer h3 {
+  color: white;
+}
+
+.grid-container-footer input {
+  font-size: 1em;
+  color: white;
+  border-width: 5px;
+  border-color: white;
+  border-style: solid;
+  background-color: transparent;
+}
+
+.grid-container-footer input:focus {
+  outline: none;
+}
+
+.section-wrapper,
+footer {
+  border-color: #131313;
+  border-right: 5px solid;
+  border-left: 5px solid;
+  border-bottom: 5px solid;
+}
+
+.hcenter {
+  text-align: center;
+}
+
+.suggestion-link {
+  text-align: right;
+}
+
+.divider {
+  width: 25%;
+  margin: 32px auto 24px auto;
+  border-bottom: 5px solid #131313;
+}
+
+.fulldivider {
+  width: 80%;
+  margin: 32px 0 24px 0;
+  border-bottom: 5px solid #131313;
+}
+
+/* GALLERY
+   ========================================================================== */
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 10%;
+  padding: 10px 10px 10px 0;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.gallery-container {
+  position: relative;
+  display: none;
+  border-radius: 5px;
+  background-color: #dfbf79;
+  padding: 20px;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  color: white;
+  font-size: 24px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* FORM
+   ========================================================================== */
+#contact {
+  width: 50%;
+  margin: 0 auto;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 5px solid #131313;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: white;
+  color: #131313;
+  width: 100%;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  /* width: 100%; */
+}
+
+#contact input[type="submit"] {
+  border: 5px solid #131313;
+  /* Gray border */
+  background-color: #131313;
+  color: white;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: #6cd2ba;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: #6cd2ba;
+  color: #131313;
+}
+
+/* ABOUT - FLIP CARD
+   ========================================================================== */
+.flip-card {
+  width: 100%;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  width: 100%;
+  height: 380px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #131313;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background: #dfbf79;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background: #6cd2ba;
+  transform: rotateY(180deg);
+}
+
+.about-avatar {
+  width: 50%;
+  max-width: 100px;
+  padding: 12px 0;
+}
+
+.cardwrapper {
+  padding: 24px;
+}
+
+.cardwrapper p {
+  padding-bottom: 8px;
+}
+
+.restaurants:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.locationbox {
+  float: left;
+  margin: 12px 0;
+  width: 33.33%;
+  padding-bottom: 24px;
+}
+
+#resultsData:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.suggestionbox {
+  float: left;
+  /* display: flex; */
+  justify-content: center;
+  width: 31%;
+  padding: 1vw;
+}
+
+.choose {
+  margin-right: 12px;
+}
+
+.selection-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+/* ==========================================================================
+   DESKTOP STYLE
+   ========================================================================== */
+@media only screen and (min-width: 1011px) {
+
+  /* TYPOGRAPHY
+   ========================================================================== */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.1em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 2.25em;
+  }
+
+  h4,
+  .link a {
+    font-size: 2em;
+  }
+
+  h5 {
+    font-size: 1.75em;
+  }
+
+  h6 {
+    font-size: 1.5em;
+  }
+
+  h1.display {
+    font-size: 5em;
+  }
+
+  p.display,
+  .narrative p {
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 20px 0;
+  }
+
+  p.display {
+    max-width: 60%;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0px;
+  }
+
+  ul li {
+    padding-bottom: 8px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .section-wrapper,
+  footer {
+    border-color: #131313;
+    border-right: 5px solid;
+    border-left: 5px solid;
+    border-bottom: 5px solid;
+  }
+
+  .quote {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .quote q {
+    font-size: 40px;
+  }
+
+  /* footer */
+  .grid-container-footer .text-input {
+    color: white;
+    width: 300px;
+  }
+
+/* GRID MANAGEMENT
+   ========================================================================== */
+  /*----Spotlight story section*/
+  .spotlight-image {
+    grid-area: image;
+  }
+
+  .spotlight-content {
+    grid-area: content;
+  }
+
+  .grid-container-spotlight {
+    display: grid;
+    grid-template-areas: "image image image image image content";
+  }
+
+  /*----Opening Now section */
+  .opening-now-block {
+    grid-area: opening;
+  }
+
+  .suggestion-gallery {
+    grid-area: gallery;
+  }
+
+  .grid-container-opening {
+    display: grid;
+    grid-template-areas: "opening opening gallery gallery gallery gallery";
+  }
+
+  /*----Location section */
+  .grid-container-location {
+    display: grid;
+    grid-template-areas: "content content content image image image";
+  }
+
+  /*-- Suggestion menu section*/
+  .grid-container-gallery,
+  .grid-container-carousel,
+  .grid-container-footer {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .grid-item {
+    padding: 12px;
+  }
+
+  .item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .carousel-item1 {
+    grid-column: 1;
+  }
+
+  .carousel-item2 {
+    grid-column: 2;
+  }
+
+  .carousel-item3 {
+    grid-column: 3;
+  }
+
+  .footer-item1 {
+    grid-column: 1;
+  }
+
+  .footer-item2 {
+    grid-column: 4;
+  }
+
+/* BORDER & SPACING
+   ========================================================================== */
+
+  #story .spotlight-content,
+  .suggestion-gallery {
+    padding: 24px;
+    border-left: 5px solid #131313;
+  }
+
+  #location .spotlight-content {
+    padding: 48px;
+    border-right: 5px solid #131313;
+  }
+
+  .opening-now-title {
+    padding: 12px;
+    border-bottom: 5px solid #131313;
+  }
+
+  .subscription input {
+    width: 200px;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .spotlight-label {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 36px;
+    border: 5px solid #131313;
+    width: fit-content;
+    block-size: fit-content;
+    margin-bottom: 20px;
+  }
+}
+
+/* ==========================================================================
+   TABLET STYLE
+   ========================================================================== */
+@media only screen and (min-width: 571px) and (max-width: 1010px) {
+  /* TYPOGRAPHY
+   ========================================================================== */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.1em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 2.25em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  h4,
+  .link a {
+    font-size: 1.75em;
+  }
+
+  h5 {
+    font-size: 1.5em;
+  }
+
+  h6 {
+    font-size: 1.25em;
+  }
+
+  h1.display {
+    font-size: 3.25em;
+  }
+
+  p.display,
+  .narrative p {
+    font-size: 20px;
+    line-height: 1.4;
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0px;
+  }
+
+  ul li {
+    padding-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .section-wrapper,
+  footer {
+    border-color: #131313;
+    border-right: 5px solid;
+    border-left: 5px solid;
+    border-bottom: 5px solid;
+  }
+
+  .quote {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .quote q {
+    font-size: 36px;
+  }
+
+  /* footer */
+  .grid-container-footer .text-input {
+    color: white;
+    width: 200px;
+  }
+
+/* GRID MANAGEMENT
+   ========================================================================== */
+  /*----Spotlight story section*/
+  .spotlight-image {
+    grid-area: image;
+  }
+
+  .spotlight-content {
+    grid-area: content;
+  }
+
+  .grid-container-spotlight {
+    display: grid;
+    grid-template-areas:
+      "image image image image image image"
+      "content content content content content content";
+  }
+
+  /*----Opening Now section */
+  .opening-now-block {
+    grid-area: opening;
+  }
+
+  .suggestion-gallery {
+    grid-area: gallery;
+  }
+
+  .grid-container-opening {
+    display: grid;
+    grid-template-areas: "opening opening gallery gallery gallery gallery";
+  }
+
+  /*----Location section */
+  .grid-container-location {
+    display: grid;
+    grid-template-areas:
+      "content content content content content content"
+      "image image image image image image";
+  }
+
+  /*-- Suggestion menu section*/
+  .grid-container-gallery,
+  .grid-container-carousel,
+  .grid-container-footer {
+    display: grid;
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .grid-item {
+    padding: 8px;
+  }
+
+  .item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .carousel-item1 {
+    grid-column: 1;
+  }
+
+  .carousel-item2 {
+    grid-column: 2;
+  }
+
+  .carousel-item3 {
+    grid-column: 3;
+  }
+
+  .footer-item1 {
+    grid-column: 1;
+  }
+
+  .footer-item2 {
+    grid-column: 2;
+  }
+
+/* BORDER & SPACING
+   ========================================================================== */
+
+  #story .spotlight-content {
+    padding: 24px;
+    border-top: 5px solid #131313;
+  }
+
+  .suggestion-gallery {
+    border-left: 5px solid #131313;
+  }
+
+  #location .spotlight-content {
+    padding: 24px;
+    border-bottom: 5px solid #131313;
+  }
+
+  .opening-now-title {
+    padding: 12px;
+    border-bottom: 5px solid #131313;
+  }
+
+  .subscription input {
+    width: 200px;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .spotlight-label {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 36px;
+    border: 5px solid #131313;
+    width: fit-content;
+    block-size: fit-content;
+    margin-bottom: 20px;
+  }
+
+  .locationbox {
+    float: left;
+    margin: 12px 0;
+    width: 50%;
+    padding-bottom: 24px;
+  }
+
+  .suggestionbox {
+    width: 45%;
+  }
+}
+
+/* ==========================================================================
+   MOBILE STYLES
+   ========================================================================== */
+@media only screen and (max-width: 570px) {
+  /* TYPOGRAPHY
+   ========================================================================== */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 2.25em;
+  }
+
+  h3 {
+    font-size: 2.25em;
+  }
+
+  h4,
+  .link a {
+    font-size: 1.75em;
+  }
+
+  h5 {
+    font-size: 1.5em;
+  }
+
+  h6 {
+    font-size: 1.1em;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  h1.display {
+    font-size: 3em;
+  }
+
+  p.display,
+  .narrative p {
+    font-size: 16px;
+    line-height: 1.4;
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0px;
+  }
+
+  ul li {
+    padding-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .section-wrapper,
+  footer {
+    border-color: #131313;
+    border-right: 5px solid;
+    border-left: 5px solid;
+    border-bottom: 5px solid;
+  }
+
+  .quote {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .quote q {
+    font-size: 24px;
+  }
+
+  /* footer */
+  .grid-container-footer .text-input {
+    color: white;
+    width: 200px;
+  }
+
+/* GRID MANAGEMENT
+   ========================================================================== */
+  /*----Spotlight story section*/
+  .spotlight-image {
+    grid-area: image;
+  }
+
+  .spotlight-content {
+    grid-area: content;
+  }
+
+  .grid-container-spotlight {
+    display: grid;
+    grid-template-areas:
+      "image image image image image image"
+      "content content content content content content";
+  }
+
+  /*----Opening Now section */
+  .opening-now-block {
+    grid-area: opening;
+  }
+
+  .suggestion-gallery {
+    grid-area: gallery;
+  }
+
+  .grid-container-opening {
+    display: grid;
+    grid-template-areas:
+      "opening opening opening opening opening opening"
+      "gallery gallery gallery gallery gallery gallery";
+  }
+
+  /*----Location section */
+  .grid-container-location {
+    display: grid;
+    grid-template-areas:
+      "content content content content content content"
+      "image image image image image image";
+  }
+
+  /*-- Suggestion menu section*/
+  .grid-container-gallery,
+  .grid-container-carousel,
+  .grid-container-footer {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .grid-item {
+    padding: 12px;
+  }
+
+  .item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .carousel-item1 {
+    grid-column: 1;
+  }
+
+  .carousel-item2 {
+    grid-column: 2;
+  }
+
+  .carousel-item3 {
+    grid-column: 1;
+  }
+
+  .footer-item1 {
+    grid-column: 1;
+  }
+
+  .footer-item2 {
+    /* grid-column: 4; */
+  }
+
+/* BORDER & SPACING
+   ========================================================================== */
+
+  #story .spotlight-content,
+  .suggestion-gallery {
+    padding: 24px;
+    border-top: 5px solid #131313;
+  }
+
+  #location .spotlight-content {
+    padding: 24px;
+    border-bottom: 5px solid #131313;
+  }
+
+  .opening-now-title {
+    padding: 10px;
+    border-bottom: 5px solid #131313;
+  }
+
+  .subscription input {
+    width: 200px;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .spotlight-label {
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 36px;
+    border: 5px solid #131313;
+    width: fit-content;
+    block-size: fit-content;
+    margin-bottom: 16px;
+  }
+
+  .locationbox,
+  .suggestionbox {
+    width: 100%;
+  }
+
+  #contact {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   REPORT.HTML SUPPLEMENT CSS
+   ========================================================================== */
+
+.report a {
+  text-decoration: underline;
+}
+#report-nav-links a {
+  text-decoration: none;
+}
+.report code {
+  color: #c88784;
+  padding: 2px;
+  border-radius: 12px;
+  background-color: #c8878420;
+}
+.report em {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}
+.report .narrative p {
+  padding: 8px 0px;
+}
+.report ul li {
+  padding: 4px;
+  font-size: 16px;
+}
+
+.report-divider {
+  width: 40px;
+  margin: 24px 0 24px 0;
+  border-bottom: 5px solid #131313;
+}
+
+.report-img {
+  margin: 32px 0;
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.09), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+}

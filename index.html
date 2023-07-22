@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Information about the page -->
+<head>
+    <title>Pranzobrenso - Home</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Pranzobrenso - The Bologna's fast lunch guide. ">
+    <meta name="author" content="Pranzobrenso Team">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Bologna, lunch, eating, guide">
+    <!-- Linking typefaces from Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+    <!-- Linking stylesheet, scripts, and libraries-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <!-- Linking data to be filled in Handlebars templates-->
+    <script src="js/data.js"></script>
+</head>
+
+<!-- This body section contains the structure for all the visble content -->
+<header>
+    <!-- Navigation Bar-->
+    <div class="navbar-wrapper">
+        <!-- Site logo-->
+        <div id="pranzobrenso-logo">
+            <a href="/index.html"><object data="images/placeholder-logo.png"></object> </a>
+        </div>
+        <!-- Site name-->
+        <div id="title-block">
+            <img src="images/icons/Pranzobrenso.svg" alt="Pranzobrenso logo"/>
+        </div>
+        <nav>
+            <div class="logo">
+            </div>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="cover-stories.html">Cover Stories</a>
+                <a href="find-your-lunch.html">Find your lunch</a>
+                <a href="locations.html">Locations</a>
+            </ul>
+            <div class="burger" id="nav">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+</header>
+<body>
+    <!-- Spotlight story section-->
+    <div id="story" class="grid-container-spotlight section-wrapper">
+        <div class="spotlight-image">
+            <a href="cover-stories.html"><img class="responsive" src="images/mortadella.png" alt="Mortadella"></a>
+        </div>
+
+        <div class="spotlight-content">
+            <div class="spotlight-label">
+                <p>Story</p>
+            </div>
+            <div>
+                <a href="cover-stories.html">
+                    <h1 class="display">Best mortadella fastfood in town</h1>
+                </a>
+            </div>
+            <div>
+                <p class="display">The best-known version is Mortadella from Bologna, here are the best places with the
+                    nice price.</p>
+            </div>
+            <div class="link">
+                <a href="cover-stories.html">Read more &#8594</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Opening Now Section-->
+    <div class="grid-container-opening section-wrapper">
+        <div class="opening-now-block" id="opening-now">
+            <div class="opening-now-title">
+                <!-- Animated opening now -->
+                <marquee scrolldelay="0">
+                    <h1>Opening Now</h1>
+                </marquee>
+            </div>
+            <div id="restaurantData" class="opening-now-list"></div>
+            <script id="restaurant-template" type="text/x-handlebars-template">
+            <!-- Opening restaurant right now from Data.js -->
+            <ul>
+                {{#each restaurants}}
+                <li>
+                    <h6>{{name}}</h6>
+                    <p>{{address}}</p>
+                    <a href="/locations.html#{{id}}"><i>Info</i> &#8594</a>
+                </li>
+                {{/each}}
+            </ul>
+            </script>
+        </div>
+        <!-- Suggestion menu section -->
+        <div class="suggestion-gallery">
+            <div id="suggestionData"></div>
+            <!-- image grid goes here. Images from Data.js-->
+            <script id="suggestion-template" type="text/x-handlebars-template">
+            <div class="grid-container-gallery">
+                            {{#each suggestionGallery}}
+                            <div class="grid-item item{{order}}">
+                                <h5>{{menu}}</h5>
+                                <p>From <em>{{restaurant}}</em></p>
+                                <img src="{{photo}}" alt="{{menu}} from {{restaurant}}">
+                            </div>
+                            {{/each}}
+            </div>
+        </script>
+            <div class="suggestion-link">
+                <a href="find-your-lunch.html">
+                    <h2>Find your lunch &#8594</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Location section-->
+    <div id="location" class="grid-container-location section-wrapper">
+        <div class="spotlight-content">
+            <div class="spotlight-label">
+                <p>Locations</p>
+            </div>
+            <div>
+                <a href="locations.html">
+                    <h1 class="display">Around the two towers</h1>
+                </a>
+            </div>
+            <div>
+                <p class="display">Too many eating choices in this charming Bologna? Here are some gems around the Two Towers, which are only 5 mins walk.</p>
+            </div>
+            <div class="link">
+                <a href="locations.html">Go to map &#8594</a>
+            </div>
+        </div>
+        <div class="spotlight-image">
+            <!-- Excerp image of the city map-->
+            <a href="locations.html"><img src="images/map.png" alt="Map of bologna with pinned locations" class="responsive" /></a>
+        </div>
+    </div>
+    <!-- Tasting Event section. Event from Data.js -->
+    <div id="carousel" class="section-wrapper">
+        <h1>Tasting Events</h1>
+        <div id="tastingData" class="grid-container-carousel"></div>
+        <script id="tasting-template" type="text/x-handlebars-template">
+                {{#each tastingEvents}}
+                <div class="grid-item carousel-item{{order}}">
+                    <img src="{{photo}}" alt="{{event}}" class="tasting">
+                    <h6>{{event}}</h6>
+                    <em>{{restaurant}} <a href="{{website}}" target="_blank">&#8594</a></em>
+                    <p>{{date}}</p>
+                </div>
+                {{/each}}
+            </script>
+    </div>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <!-- Pre footer navigation -->
+    <div id="quote" class="quote section-wrapper">
+        <p class="quotename"><em> - pranzobrenso</p></em>
+        <q>We are what we eat</q>
+        <div class="link">
+            <a href="locations.html">&#8592 Locations</a>
+            <a class="right" href="about.html">About us &#8594</a>
+        </div>
+    </div>
+</body>
+<!-- Foother with subscription to newsletter button-->
+<footer>
+    <div class="grid-container-footer">
+        <div class="grid-item footer-item1">
+            <h3>Get monthly update</h3>
+        </div>
+        <div class="grid-item footer-item2">
+            <form class="subscription" action="">
+                <input type="email" class="text-input" name="email" placeholder="Your email address">
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+    </div>
+</footer>
+</html>
